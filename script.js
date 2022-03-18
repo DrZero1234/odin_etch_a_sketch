@@ -1,4 +1,6 @@
+
 const grid_container = document.querySelector(".grid-container");
+
 
 
 function generate_grid (input) {
@@ -14,8 +16,17 @@ function generate_grid (input) {
         div_element.classList.add("grid-item");
         grid_container.appendChild(div_element);
     }
-
-    
 }
 
-generate_grid(20)
+generate_grid(16)
+
+const all_grid_items = document.querySelectorAll(".grid-item");
+
+grid_container.addEventListener("onclick", () => {
+    grid_container.style.backgroundColor = "black";
+})
+
+
+
+// TODO Button on top to clear the grid and ask for a new one with number of columns and rows
+

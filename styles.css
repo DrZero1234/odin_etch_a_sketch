@@ -1,9 +1,10 @@
-
 .grid-container {
+    float: right;
+    padding: 100px;
+    width: 960px;
+    height: 960px;
 }
 
 .grid-item {
-    color: #fff;
-    padding: 15px;
     border: black 1px solid;
 }
