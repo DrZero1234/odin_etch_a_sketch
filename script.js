@@ -22,8 +22,13 @@ generate_grid(16)
 
 const all_grid_items = document.querySelectorAll(".grid-item");
 
-grid_container.addEventListener("onclick", () => {
-    grid_container.style.backgroundColor = "black";
+
+color_prompt = prompt("Enter a color: ","");
+
+all_grid_items.forEach((grid_item) => {
+    grid_item.addEventListener("mouseenter", () =>  {
+        grid_item.style.backgroundColor = color_prompt.toLowerCase();
+    })
 })
 
 
