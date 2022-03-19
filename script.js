@@ -1,9 +1,13 @@
 
 const grid_container = document.querySelector(".grid-container");
-
-
+const ui = document.querySelector(".UI");
+clrBttn = document.createElement("button")
+clrBttn.innerText = "Clear";
+ui.appendChild(clrBttn);
+clearBttn = document.querySelector("button");
 
 function generate_grid (input) {
+
     grid_container.style.cssText = `
     display: grid;   
     grid-template-columns: repeat(${input},1fr);
@@ -26,6 +30,9 @@ const all_grid_items = document.querySelectorAll(".grid-item");
 color_prompt = prompt("Enter a color: ","");
 
 all_grid_items.forEach((grid_item) => {
+    clearBttn.addEventListener("click", () =>{
+        grid_item.style.backgroundColor = "white"
+    })
     grid_item.addEventListener("mouseenter", () =>  {
         grid_item.style.backgroundColor = color_prompt.toLowerCase();
     })
