@@ -1,5 +1,35 @@
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    align-items: space-around;
+}
+
+.user-interface {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 100px;
+    height: 960px;
+    padding: 30px;
+}
+
 .grid-container {
-    float: right;
     padding: 100px;
     width: 960px;
     height: 960px;

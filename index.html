@@ -9,17 +9,29 @@
     <title>Etch a sketch</title>
 </head>
 <body>
+    <div class = "wrapper">
+            <h1>Etch a sketch</h1>
+        <div class = "main-content">
+            <div class = "user-interface">
+                <button id = "clear">Clear</button>
+                <label for = "brush-color">Brush Color</label>
+                <input type = "color" id = "brush-color" value = "#ff0000">
+                <div>
+                    <label for = "cols-num">Columns:</label>
+                    <input type = "number" id = "cols-num" value=16 min = 1 max = 99 >
+                </div>
+                <div>
+                    <label for = "cols-num">Rows:</label>
+                    <input type = "number" id = "rows-num" value=16 min = 1 max = 99 >
+                </div>
+            </div>
+            <div class = "grid-container">
 
-    <div class = "grid-container">
-        <div class = "UI">
+            </div>
 
         </div>
-        
-        <div class = "grid-table">
-
-        </div>
-
     </div>
+
     
 </body>
 </html>
