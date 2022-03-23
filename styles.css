@@ -30,11 +30,13 @@ h1 {
 }
 
 .grid-container {
-    padding: 100px;
+    border: 3px solid black;
+    margin: 100px;
     width: 960px;
     height: 960px;
 }
 
 .grid-item {
-    border: black 1px solid;
+    border: 1px solid black;
 }
+
