@@ -11,6 +11,10 @@ let rows = document.querySelector("#rows-num");
 
 
 function generate_grid (rows = default_value,cols = default_value) {
+
+    // Resets the grid container
+
+    
     while (grid_container.firstChild) {
         grid_container.removeChild(grid_container.firstChild)
     }
@@ -28,24 +32,22 @@ function generate_grid (rows = default_value,cols = default_value) {
     }
 }
 
-generate_grid(16)
 
 
+
+
+
+cols.addEventListener("mouseup", generate_grid(Math.floor(+rows.value), Math.floor(+cols.value)))
+cols.addEventListener("mouseup", generate_grid(Math.floor(+rows.value), Math.floor(+cols.value)))
 
 const all_grid_items = document.querySelectorAll(".grid-item");
 
-cols.addEventListener("oninput", generate_grid(+rows.value, +cols.value))
-cols.addEventListener("oninput", generate_grid(+rows.value, +cols.value))
-brush_input.addEventListener("change", brush_color(brush_input.value));
-
-
-function brush_color (color) {
-    all_grid_items.forEach((grid_item) => {
-        grid_item.addEventListener("mouseenter", () =>  {
-            grid_item.style.backgroundColor = color;
-        })
+all_grid_items.forEach((grid_item) => {
+    grid_item.addEventListener("mouseenter", () =>  {
+        grid_item.style.backgroundColor = brush_input.value;
     })
-}
+})
+
 
 
 function clear() {
