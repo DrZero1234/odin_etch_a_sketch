@@ -10,6 +10,9 @@ let rows = document.querySelector("#rows-num");
 
 
 
+
+// TODO Instead of regenerating just append new cols or rows to exisiting grid
+
 function generate_grid (rows = default_value,cols = default_value) {
 
     // Resets the grid container
@@ -38,25 +41,33 @@ function generate_grid (rows = default_value,cols = default_value) {
 
 
 
-cols.addEventListener("input", function () {
+cols.addEventListener("change", function () {
     generate_grid(Math.floor(cols.value), Math.floor(this.value))
+    brush_event()
+    clear()
     
 })
-rows.addEventListener("input", function () {
+rows.addEventListener("change", function () {
     generate_grid(Math.floor(this.value), Math.floor(rows.value))
+    brush_event()
+    clear()
 })
 
-const all_grid_items = document.querySelectorAll(".grid-item");
 
+function brush_event() {
+    const all_grid_items = document.querySelectorAll(".grid-item"); 
 all_grid_items.forEach((grid_item) => {
     grid_item.addEventListener("mouseenter", () =>  {
         grid_item.style.backgroundColor = brush_input.value;
     })
 })
+}
+
 
 
 
 function clear() {
+    const all_grid_items = document.querySelectorAll(".grid-item");
     all_grid_items.forEach((grid_item) => {
         clearBttn.addEventListener("click", () =>{
             grid_item.style.backgroundColor = "white"
@@ -64,9 +75,10 @@ function clear() {
     })
 }
 
+generate_grid()
+brush_event()
 clear()
 
-generate_grid(default_value,default_value)
 
 
 // TODO Button on top to clear the grid and ask for a new one with number of columns and rows

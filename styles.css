@@ -40,3 +40,12 @@ h1 {
     border: 1px solid black;
 }
 
+button {
+    border: none;
+    padding: 8px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 50%;
+}
+
