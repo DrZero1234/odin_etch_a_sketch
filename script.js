@@ -1,14 +1,15 @@
 
 const grid_container = document.querySelector(".grid-container");
-const ui = document.querySelector(".UI");
+const ui = document.querySelector(".user-interface");
 const wrapper = document.querySelector(".wrapper");
 const default_value = 16;
 const clearBttn = document.querySelector("#clear");
 let brush_input = document.querySelector("#brush-color")
 let cols = document.querySelector("#cols-num");
 let rows = document.querySelector("#rows-num");
+const all_btns = ui.querySelectorAll("button:not(#clear)");
 
-
+console.log(Array.from(all_btns).map(item => item.className))
 
 
 // TODO Instead of regenerating just append new cols or rows to exisiting grid
@@ -35,6 +36,21 @@ function generate_grid (rows = default_value,cols = default_value) {
     }
     console.log("Grid generated")
 }
+
+
+
+// Button toggler - Only one button can be active
+
+all_btns.forEach((button) => {
+    button.addEventListener("click", () => {
+        if (button.className === "active") {
+            button.className = "inactive" 
+        } else {
+            Array.from(all_btns).map(item => item.className = "inactive")
+            button.className = "active"
+        }
+    })
+})
 
 
 

@@ -49,3 +49,9 @@ button {
     width: 50%;
 }
 
+.active {
+    border: 2px groove black;
+    border-color: red;
+    background-color: coral;
+}
+
