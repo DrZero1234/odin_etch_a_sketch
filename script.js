@@ -49,10 +49,20 @@ all_btns.forEach((button) => {
             Array.from(all_btns).map(item => item.className = "inactive")
             button.className = "active"
         }
+
+        if (button.id === "color-mode" && button.className === "active") {
+            brush_event()
+        } else if (button.id === "eraser" && button.className === "active") {
+            eraser()
+        }
+
+
     })
 })
 
-
+all_btns.forEach((button) => {
+    button.addEventListener("change", brush_event)
+})
 
 
 
@@ -70,14 +80,29 @@ rows.addEventListener("change", function () {
 })
 
 
+
+
 function brush_event() {
     const all_grid_items = document.querySelectorAll(".grid-item"); 
-all_grid_items.forEach((grid_item) => {
-    grid_item.addEventListener("mouseenter", () =>  {
-        grid_item.style.backgroundColor = brush_input.value;
+    const color_mode_btn = document.getElementById("color-mode")
+    all_grid_items.forEach((grid_item) => {
+        grid_item.addEventListener("mouseenter", () =>  {
+            grid_item.style.backgroundColor = brush_input.value;
+        })
     })
-})
 }
+
+function eraser() {
+    const all_grid_items = document.querySelectorAll(".grid-item"); 
+    const eraser_btn = document.getElementById("eraser")
+    all_grid_items.forEach((grid_item) => {
+        grid_item.addEventListener("mouseenter", () =>  {
+            grid_item.style.backgroundColor = "white";
+        })
+    })
+}
+
+
 
 
 
@@ -90,10 +115,9 @@ function clear() {
         })
     })
 }
-
 generate_grid()
-brush_event()
 clear()
+
 
 
 
